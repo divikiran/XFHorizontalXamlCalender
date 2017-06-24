@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="20" xmlns="http://xamarin.com/schemas/2014/forms" Title="{Binding PageTitle}" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CalenderView.Pages.CalenderPage" xmlns:contentviews="clr-namespace:CalenderView.Pages;assembly=CalenderView" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <contentviews:HorizontalCalenderView />
+            <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding SelectedDate}" />
+            <ListView ItemsSource="{Binding SelectedDateHistory}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding .}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

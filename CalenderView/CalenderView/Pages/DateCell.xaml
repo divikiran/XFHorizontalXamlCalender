@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView x:Name="DateCellName" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CalenderView.Pages.DateCell" xmlns:contentviews="clr-namespace:CalenderView.Pages;assembly=CalenderView">
+    <ContentView.Content>
+        <contentviews:RepeaterView ItemsSource="{Binding Dates}" x:Name="DateRepeaterView">
+            <contentviews:RepeaterView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.DateTapped, Source={x:Reference DateCellName}}" CommandParameter="{Binding DateTimePassed}" />
+                        </StackLayout.GestureRecognizers>
+                        <Label Text="{Binding Date}" />
+                    </StackLayout>
+                </DataTemplate>
+            </contentviews:RepeaterView.ItemTemplate>
+        </contentviews:RepeaterView>
+    </ContentView.Content>
+</ContentView>

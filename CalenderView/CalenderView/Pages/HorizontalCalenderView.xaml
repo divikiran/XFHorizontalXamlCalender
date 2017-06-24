@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CalenderView.Pages.HorizontalCalenderView" xmlns:contentviews="clr-namespace:CalenderView.Pages;assembly=CalenderView" xmlns:cmodels="clr-namespace:CalenderView.Models;assembly=CalenderView">
+    <ContentView.Content>
+        <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+            <ScrollView.Behaviors>
+                <cmodels:ScrollBehavior />
+            </ScrollView.Behaviors>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Fill">
+                <contentviews:DateCell />
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>
